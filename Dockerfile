@@ -24,4 +24,4 @@ RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python3.10
 RUN python3.10 -m pip --version
 
 RUN pip install -U pip wheel setuptools
-RUN pip install --no-cache-dir torch --extra-index-url https://download.pytorch.org/whl/cu116
+RUN pip install --pre --no-cache-dir torch --extra-index-url https://download.pytorch.org/whl/nightly/cu117
