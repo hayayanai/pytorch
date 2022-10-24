@@ -11,4 +11,5 @@ pip
 
 ```sh
 docker image pull ghcr.io/hayayanai/pytorch:latest
+singularity pull pytorch_latest.sif docker://ghcr.io/hayayanai/pytorch:latest
 ```
