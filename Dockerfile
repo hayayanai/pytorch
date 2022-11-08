@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.6.1-runtime-ubuntu20.04
+FROM nvidia/cuda:11.7.1-runtime-ubuntu20.04
 RUN apt-get update -y
 RUN apt-get upgrade -y
 RUN apt-get dist-upgrade -y
@@ -15,13 +15,13 @@ ENV LANG C.UTF-8
 
 RUN apt-get update -y
 RUN apt-get install python3.10 -y
-
-RUN python3.10 --version
+RUN apt-get install python3.10-dev -y
+RUN apt-get install clang -y
 
 RUN apt-get remove python-pip
 RUN apt-get -y install python3.10-distutils
 RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python3.10
 RUN python3.10 -m pip --version
 
-RUN pip install -U pip wheel setuptools
-RUN pip install --pre --no-cache-dir torch --extra-index-url https://download.pytorch.org/whl/nightly/cu117
+RUN python3.10 -m pip install -U pip wheel setuptools pybind11
+RUN python3.10 -m pip install --pre --no-cache-dir torch --extra-index-url https://download.pytorch.org/whl/nightly/cu117
