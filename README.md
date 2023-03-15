@@ -3,7 +3,7 @@
 Dockerfile and image for PyTorch + CUDA on ubuntu image
 
 ```sh
-python3.10
+python3.11
 pip
 ```
 
